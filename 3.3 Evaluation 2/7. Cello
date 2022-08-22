@@ -1,0 +1,13 @@
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<Audio version="1.0" timeUnit="ms" gain="-9dB" transitionTime="30">
+
+	<var name="pitch" value="$hand_l8y" mapin="0.2,0.8" mapout="36,48" steps="0,2,4,5,7,9,11,12" convert="MIDI->frequency"></var>
+	<var name="gain" value="$hand_r8x.speed" mapin="0.001,0.02" mapout="0,1"></var>
+
+	<OscillatorNode type="sawtooth" frequency="$pitch" output="next"></OscillatorNode>
+	<BiquadFilterNode type="lowpass" frequency="400" output="next"></BiquadFilterNode>
+	<GainNode gain="$gain"></GainNode>
+
+</Audio>
+```
